@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Звіт з лабораторних робіт</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .student-info {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .buttons-container {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .lab-link {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .lab-link:hover {
+            background-color: #45a049;
+        }
+
+        .content-wrapper {
+            display: flex;
+            gap: 20px;
+        }
+
+        .left-panel {
+            width: 30%;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .right-panel {
+            width: 70%;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .settings-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .settings-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .content-item {
+            display: none;
+        }
+
+        .content-item.active-content {
+            display: block;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+
+        .code-example {
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Звіт з лабораторних робіт<br>З дисципліни "Проєктування веб-застосувань"</h1>
+    </div>
+
+    <div class="student-info">
+        <h2>Студентки ІІ курсу групи № ЗПІ-зп41 Ірина</h2>
+    </div>
+
+    <div class="buttons-container">
+        <a href="1.1.html" class="lab-link">Лабораторна робота 1.1</a>
+        <a href="1.2.html" class="lab-link">Лабораторна робота 1.2</a>
+        <a href="2.1.html" class="lab-link">Лабораторна робота 2.1</a>
+        <a href="3.1.html" class="lab-link">Лабораторна робота 3.1</a>
+        <a href="3.2.html" class="lab-link">Лабораторна робота 3.2</a>
+        <a href="4.html" class="lab-link">Лабораторна робота 4</a>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="left-panel">
+            <button class="settings-btn" data-content="theme">Тема/Мета</button>
+            <button class="settings-btn" data-content="tag">Селектор тегу</button>
+            <button class="settings-btn" data-content="class">Селектор класу</button>
+            <button class="settings-btn" data-content="ind">Селектор ідентифікатора</button>
+            <button class="settings-btn" data-content="fonts">Шрифти</button>
+            <button class="settings-btn" data-content="tables">Таблиці CSS</button>
+            <button class="settings-btn" data-content="advanced">CSS Advanced</button>
+            <button class="settings-btn" data-content="conclusions">Висновки</button>
+        </div>
+
+        <div class="right-panel" id="contentArea">
+            <div id="theme" class="content-item active-content">
+                <h3>Тема/Мета</h3>
+                <p><strong>Тема:</strong> КАСКАДНІ ТАБЛИЦІ СТИЛІВ. СЕЛЕКТОРИ. СТИЛЬОВЕ ОФОРМЛЕННЯ ТЕКСТОВИХ ЕЛЕМЕНТІВ</p>
+                <p><strong>Мета:</strong> Опанувати практичні навички роботи з селекторами, властивостями кольору і фону, оформлення текстових елементів</p>
+            </div>
+
+<div id="tag" class="content-item">
+    <h3>Селектор тегу</h3>
+    <p>У наданому коді використовуються декілька селекторів тегів. Розглянемо приклад селектора для тегу <code>&lt;section&gt;</code>:</p>
+    
+    <div class="code-example">
+        <h4>HTML код:</h4>
+        <pre>&lt;section class="course-section"&gt;
+    &lt;div class="hero-container"&gt;
+        &lt;img src="..." alt="Course hero banner" class="hero-image" /&gt;
+        &lt;div class="hero-content"&gt;
+            &lt;h1 class="hero-title"&gt;Гурток для вашої дитини&lt;/h1&gt;
+            &lt;button class="search-button"&gt;Підібрати гурток 🔍&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</pre>
+        
+        <h4>CSS код:</h4>
+        <pre>section {
+    background-color: rgba(90, 219, 255, 1);
+    display: flex;
+    padding: 85px 0;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+}</pre>
+    </div>
+    
+    <p>Цей селектор тегу застосовується до всіх елементів <code>&lt;section&gt;</code> на сторінці, встановлюючи блакитний фон та організовуючи вміст у вертикальну колонку з центруванням.</p>
+</div>
+
+<div id="class" class="content-item">
+    <h3>Селектор класу</h3>
+    <p>У коді широко використовуються селектори класів. Розглянемо приклад класу <code>.course-card</code>:</p>
+    
+    <div class="code-example">
+        <h4>HTML код:</h4>
+        <pre>&lt;article class="course-card"&gt;
+    &lt;img src="..." alt="Mathematics for young children course" class="course-image" /&gt;
+    &lt;h3 class="course-title"&gt;Математика для наймолодших&lt;/h3&gt;
+    &lt;div class="course-meta"&gt;
+        &lt;span class="age-range"&gt;Вік: 3-5 р.&lt;/span&gt;
+        &lt;span class="age-icon"&gt;👶&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="difficulty"&gt;
+        &lt;span class="difficulty-label"&gt;Складність:&lt;/span&gt;
+        &lt;span class="difficulty-icon"&gt;😁&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;p class="price"&gt;Вартість: 400 грн/міс&lt;/p&gt;
+    &lt;button class="enroll-button"&gt;
+        &lt;span class="enroll-text"&gt;Записатись&lt;/span&gt;
+        &lt;span class="enroll-icon"&gt;✍&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/article&gt;</pre>
+
+        <h4>CSS код:</h4>
+        <pre>.course-card {
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    font-size: 24px;
+    padding: 20px 18px;
+}</pre>
+    </div>
+    
+    <p>Цей селектор класу застосовується до карток курсів, створюючи білі прямокутники із заокругленими кутами та організовуючи вміст у вертикальну колонку.</p>
+</div>
+
+<div id="ind" class="content-item">
+    <h3>Селектор ідентифікатора</h3>
+    <p>У коді знайдено використання селекторів ідентифікаторів у формі пошуку. Розглянемо приклад з полем категорії:</p>
+    
+    <div class="code-example">
+        <h4>HTML код:</h4>
+        <pre>&lt;div class="form-group"&gt;
+    &lt;label for="category" class="form-label"&gt;Категорія:&lt;/label&gt;
+    &lt;input type="text" id="category" class="form-input" /&gt;
+&lt;/div&gt;</pre>
+
+        <h4>CSS код:</h4>
+        <pre>#category {
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 1);
+    height: 40px;
+    width: 267px;
+}</pre>
+    </div>
+    
+    <p>Цей селектор ідентифікатора застосовується до конкретного поля введення категорії, встановлюючи його розміри та стилі. В даному випадку селектор ідентифікатора використовується для унікальних елементів форми, таких як поля введення, що мають специфічні стилі та властивості.</p>
+</div>
+
+            <div id="fonts" class="content-item">
+                <h3>Робота зі шрифтами</h3>
+                <p>CSS дозволяє керувати шрифтами, їх розміром, вагою, стилем та іншими властивостями.</p>
+                <div class="code-example">
+                    <h4>CSS:</h4>
+                    <pre>body {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+h1 {
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  font-size: 2.5rem;
+}</pre>
+                </div>
+            </div>
+
+            <div id="tables" class="content-item">
+                <h3>Стилізація таблиць</h3>
+                <p>CSS дозволяє стилізувати таблиці, змінюючи їх фон, рамки, відступи та інші властивості.</p>
+                <div class="code-example">
+                    <h4>HTML:</h4>
+                    <pre>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Заголовок&lt;/th&gt;
+    &lt;th&gt;Значення&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Дані 1&lt;/td&gt;
+    &lt;td&gt;Дані 2&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</pre>
+                    <h4>CSS:</h4>
+                    <pre>table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}</pre>
+                </div>
+            </div>
+
+            <div id="advanced" class="content-item">
+                <h3>Розширені техніки CSS</h3>
+                <p>Сучасні техніки CSS, такі як Flexbox, Grid та анімації, дозволяють створювати складні макети та динамічні ефекти.</p>
+                <div class="code-example">
+                    <h4>Flexbox:</h4>
+                    <pre>.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}</pre>
+                    <h4>Grid:</h4>
+                    <pre>.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}</pre>
+                    <h4>Анімації:</h4>
+                    <pre>@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.element {
+  animation: fadeIn 1s ease-in-out;
+}</pre>
+                </div>
+            </div>
+
+            <div id="conclusions" class="content-item">
+                <h3>Висновки</h3>
+                <ul>
+                    <li>Опановано роботу з основними типами селекторів</li>
+                    <li>Реалізовано різноманітні способи стилізації елементів</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.settings-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const contentId = button.dataset.content;
+                document.querySelectorAll('.content-item').forEach(item => {
+                    item.classList.remove('active-content');
+                });
+                document.getElementById(contentId).classList.add('active-content');
+            });
+        });
+    </script>
+</body>
+</html>
