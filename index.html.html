@@ -1,0 +1,493 @@
+<style>
+  .course-section {
+    background-color: rgba(90, 219, 255, 1);
+    display: flex;
+    padding: 40px 0;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    position: relative;
+    min-height: 600px;
+    width: 100%;
+    align-items: start;
+    padding: 40px 60px;
+  }
+  
+  .hero-image {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .hero-content {
+    position: relative;
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+  
+  .hero-title {
+    font: 400 48px Kablammo, sans-serif;
+    margin-bottom: 40px;
+    color: #000;
+  }
+  
+  .search-button {
+    border-radius: 10px;
+    background-color: rgba(251, 255, 0, 1);
+    align-self: start;
+    width: 400px;
+    padding: 12px 40px;
+    font: 500 32px Advent Pro, sans-serif;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+  }
+  
+  .search-button:hover {
+    background-color: rgba(231, 235, 0, 1);
+  }
+  
+  .section-header {
+    background-color: rgba(251, 255, 0, 1);
+    width: 100%;
+    text-align: center;
+    padding: 24px 40px;
+    font: 500 36px Advent Pro, sans-serif;
+    margin: 40px 0;
+  }
+  
+  .courses-grid {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 0 20px;
+  }
+  
+  .course-card {
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    padding: 20px;
+    transition: transform 0.3s;
+  }
+  
+  .course-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .course-image {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .course-title {
+    border-radius: 8px;
+    background-color: rgba(90, 219, 255, 1);
+    margin-top: 15px;
+    font-family: Inter, sans-serif;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 500;
+    padding: 10px 20px;
+    font-size: 20px;
+  }
+  
+  .course-meta {
+    display: flex;
+    margin-top: 15px;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .age-range {
+    color: rgba(90, 90, 90, 1);
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+  }
+  
+  .difficulty {
+    display: flex;
+    margin-top: 10px;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .difficulty-label {
+    color: rgba(90, 90, 90, 1);
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+  }
+  
+  .price {
+    color: rgba(90, 90, 90, 1);
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    margin-top: 10px;
+  }
+  
+  .enroll-button {
+    border-radius: 8px;
+    background-color: rgba(251, 255, 0, 1);
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+    font-size: 18px;
+  }
+  
+  .enroll-button:hover {
+    background-color: rgba(231, 235, 0, 1);
+  }
+  
+  .search-section {
+    background-color: rgba(251, 255, 0, 1);
+    width: 100%;
+    padding: 40px;
+    margin-top: 60px;
+  }
+  
+  .search-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .search-title {
+    color: rgba(0, 0, 0, 1);
+    font: 500 36px Advent Pro, sans-serif;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .form-label {
+    color: rgba(172, 172, 172, 1);
+    font: 300 24px Inter, sans-serif;
+  }
+  
+  .form-input {
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 1);
+    height: 40px;
+    width: 267px;
+    border: 1px solid #ddd;
+    padding: 0 10px;
+  }
+  
+  .age-inputs {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    font-size: 18px;
+  }
+  
+  .age-input {
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 1);
+    width: 60px;
+    height: 36px;
+    border: 1px solid #ddd;
+    padding: 0 5px;
+  }
+  
+  .difficulty-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .difficulty-button {
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 8px 20px;
+    font: 500 22px Advent Pro, sans-serif;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s;
+  }
+  
+  .difficulty-button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .contact-title {
+    color: rgba(0, 0, 0, 1);
+    margin-top: 60px;
+    font: 500 48px Advent Pro, sans-serif;
+    text-align: center;
+  }
+  
+  .contact-subtitle {
+    color: rgba(0, 0, 0, 1);
+    margin-top: 20px;
+    font: 500 36px Advent Pro, sans-serif;
+    text-align: center;
+  }
+  
+  .contact-button {
+    border-radius: 15px;
+    background-color: rgba(251, 255, 0, 1);
+    margin: 30px auto;
+    width: 100%;
+    max-width: 600px;
+    padding: 15px 40px;
+    font: 500 32px Advent Pro, sans-serif;
+    cursor: pointer;
+    border: none;
+    display: block;
+    transition: background-color 0.3s;
+  }
+  
+  .contact-button:hover {
+    background-color: rgba(231, 235, 0, 1);
+  }
+  
+  @media (max-width: 1280px) {
+    .courses-grid {
+      padding: 0 40px;
+    }
+    
+    .hero-title {
+      font-size: 42px;
+    }
+    
+    .search-button {
+      width: 350px;
+      font-size: 28px;
+    }
+  }
+  
+  @media (max-width: 991px) {
+    .hero-container {
+      min-height: 400px;
+      padding: 30px 20px;
+    }
+  
+    .courses-grid {
+      grid-template-columns: 1fr;
+      padding: 0 20px;
+    }
+  
+    .hero-title {
+      font-size: 36px;
+    }
+  
+    .search-button {
+      width: 300px;
+      font-size: 24px;
+      padding: 10px 30px;
+    }
+  
+    .section-header {
+      font-size: 28px;
+      padding: 20px;
+    }
+  
+    .search-title {
+      font-size: 28px;
+    }
+  
+    .form-label {
+      font-size: 20px;
+    }
+  
+    .contact-title {
+      font-size: 36px;
+    }
+  
+    .contact-subtitle {
+      font-size: 28px;
+    }
+  
+    .contact-button {
+      font-size: 24px;
+      padding: 12px 30px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-container {
+      min-height: 300px;
+    }
+  
+    .hero-title {
+      font-size: 32px;
+    }
+  
+    .search-button {
+      width: 250px;
+      font-size: 20px;
+    }
+  
+    .course-title {
+      font-size: 18px;
+    }
+  
+    .form-group {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .form-input {
+      width: 100%;
+    }
+  
+    .age-inputs {
+      width: 100%;
+      justify-content: flex-start;
+    }
+  }
+    </style>
+    
+    <section class="course-section">
+      <div class="hero-container">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/64c0c1f9a06b04540d2b021d93113659496375368186118ae15bdae9bdf44281?placeholderIfAbsent=true&apiKey=effc406a48774fb39f38f5578c8390cf" alt="Course hero banner" class="hero-image" />
+        <div class="hero-content">
+          <h1 class="hero-title">Гурток для вашої дитини</h1>
+          <button class="search-button">Підібрати гурток 🔍</button>
+        </div>
+      </div>
+    
+      <h2 class="section-header">Гуртки із відкритим набором</h2>
+    
+      <div class="courses-grid">
+        <article class="course-card">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6dec9c241d53192bf0c20f11e6e07bf5b1cdee0de81485aa5b0bc4181f061851?placeholderIfAbsent=true&apiKey=effc406a48774fb39f38f5578c8390cf" alt="Mathematics for young children course" class="course-image" />
+          <h3 class="course-title">Математика для наймолодших</h3>
+          <div class="course-meta">
+            <span class="age-range">Вік: 3-5 р.</span>
+            <span class="age-icon">👶</span>
+          </div>
+          <div class="difficulty">
+            <span class="difficulty-label">Складність:</span>
+            <span class="difficulty-icon">😁</span>
+          </div>
+          <p class="price">Вартість: 400 грн/міс</p>
+          <button class="enroll-button">
+            <span class="enroll-text">Записатись</span>
+            <span class="enroll-icon">✍</span>
+          </button>
+        </article>
+    
+        <article class="course-card">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/fb16e329e474dfc7b890e9c69b581aa86be9fcb3d19314f09b749050d81ec73f?placeholderIfAbsent=true&apiKey=effc406a48774fb39f38f5578c8390cf" alt="English for admission course" class="course-image" />
+          <h3 class="course-title">Англійська для вступу</h3>
+          <div class="course-meta">
+            <span class="age-range">Вік: 14-16р.</span>
+            <span class="age-icon">🧑</span>
+          </div>
+          <div class="difficulty">
+            <span class="difficulty-label">Складність:</span>
+            <span class="difficulty-icon">😱</span>
+          </div>
+          <p class="price">Вартість: 1200 грн/міс</p>
+          <button class="enroll-button">
+            <span class="enroll-text">Записатись</span>
+            <span class="enroll-icon">✍</span>
+          </button>
+        </article>
+      </div>
+    
+      <div class="courses-grid">
+        <article class="course-card">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/27fd0897e0c678fd47cfe069c40a71ad2b5275e52ca9c69bb95152571527fff6?placeholderIfAbsent=true&apiKey=effc406a48774fb39f38f5578c8390cf" alt="Ukrainian language NMT preparation course" class="course-image" />
+          <h3 class="course-title">Підготовка до НМТ з Укр. Мови</h3>
+          <div class="course-meta">
+            <span class="age-range">Вік: 14-16р.</span>
+            <span class="age-icon">🧑</span>
+          </div>
+          <div class="difficulty">
+            <span class="difficulty-label">Складність:</span>
+            <span class="difficulty-icon">😲</span>
+          </div>
+          <p class="price">Вартість: 900 грн/міс</p>
+          <button class="enroll-button">
+            <span class="enroll-text">Записатись</span>
+            <span class="enroll-icon">✍</span>
+          </button>
+        </article>
+    
+        <article class="course-card">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/38e9d54947c470a3128d4dda34006270d009c4fe01dd4a3d9042ce07820fd1e2?placeholderIfAbsent=true&apiKey=effc406a48774fb39f38f5578c8390cf" alt="Programming for children course" class="course-image" />
+          <h3 class="course-title">Програмування для дітей</h3>
+          <div class="course-meta">
+            <span class="age-range">Вік: 8-13р.</span>
+            <span class="age-icon">🧒</span>
+          </div>
+          <div class="difficulty">
+            <span class="difficulty-label">Складність:</span>
+            <span class="difficulty-icon">😱</span>
+          </div>
+          <p class="price">Вартість: 1200 грн/міс</p>
+          <button class="enroll-button">
+            <span class="enroll-text">Записатись</span>
+            <span class="enroll-icon">✍</span>
+          </button>
+        </article>
+      </div>
+    
+      <section class="search-section">
+        <div class="search-container">
+          <form class="search-form">
+            <h2 class="search-title">Не знайшли те що шукали? 🔍</h2>
+            
+            <div class="form-group">
+              <label for="category" class="form-label">Категорія:</label>
+              <input type="text" id="category" class="form-input" />
+            </div>
+    
+            <div class="form-group">
+              <label for="age-from" class="form-label">Вік:</label>
+              <div class="age-inputs">
+                <span>від</span>
+                <input type="number" id="age-from" class="age-input" />
+                <span>до</span>
+                <input type="number" id="age-to" class="age-input" />
+              </div>
+            </div>
+    
+            <div class="difficulty-buttons">
+              <span class="form-label">Складність:</span>
+              <button type="button" class="difficulty-button">😁</button>
+              <button type="button" class="difficulty-button">😲</button>
+              <button type="button" class="difficulty-button">😱</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    
+      <h2 class="contact-title">Маєте запитання до сайту або менеджера?</h2>
+      <p class="contact-subtitle">Зв'яжіться з нами через email 👇</p>
+      <button class="contact-button">Написати нам 📩</button>
+    </section>
