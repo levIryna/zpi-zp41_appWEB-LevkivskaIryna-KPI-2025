@@ -1,0 +1,374 @@
+.course-section {
+  background: rgba(90, 219, 255, 1);
+  display: flex;
+  padding: 0;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+}
+
+  
+.hero-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 58vh; 
+  padding: 40px 80px; 
+}
+  
+.hero-image {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+  
+.hero-content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+  
+.hero-title {
+  position: absolute;
+  left: 30%; 
+  transform: translateX(-30%);
+  font: 400 64px Kablammo, sans-serif;
+  z-index: 1;
+  margin: 0;
+  white-space: nowrap;
+  color: white;
+  font-weight: bold;
+  text-shadow: 
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,  
+    -1px 1px 0 #000,  
+    1px 1px 0 #000; 
+}
+  
+.cta-button {
+  border-radius: 10px;
+  background: rgba(251, 255, 0, 1);
+  margin: auto; 
+  width: 600px;
+  padding: 12px 70px;
+  font: 500 48px Advent Pro, sans-serif;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 40px; 
+  color: black; 
+  text-decoration: none; 
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background: rgba(251, 255, 0, 0.8); 
+}
+
+.section-header {
+  background: rgba(251, 255, 0, 1);
+  width: 100%;
+  text-align: center;
+  padding: 32px 70px;
+  font: 500 48px Advent Pro, sans-serif;
+}
+  
+  .courses-grid {
+    margin-top: 90px;
+    width: 100%;
+    max-width: 1094px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    box-sizing: border-box; 
+  }
+  
+  .course-card {
+    border-radius: 30px;
+    background: #fff;
+    width: calc(50% - 10px); 
+    padding: 20px 18px;
+    font-size: 24px;
+    box-sizing: border-box; 
+  }
+  
+  
+  .course-image {
+    aspect-ratio: 1.25;
+    width: 100%;
+    border-radius: 10px;    
+    object-fit: contain;
+  }
+  
+  .course-title {
+    border-radius: 10px;
+    background: rgba(90, 219, 255, 1);
+    margin-top: 5px;
+    padding: 5px 27px;
+    color: #fff;
+    font: 300 24px Inter, sans-serif;
+  }
+  
+  .course-meta {
+    display: flex;
+    margin-top: 19px;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .age-range {
+    color: #5a5a5a;
+    font: 100 24px Inter, sans-serif;
+  }
+  
+  .difficulty {
+    display: flex;
+    margin-top: 12px;
+    gap: 20px;
+    align-items: center;
+    color: #5a5a5a;
+    font: 100 24px Inter, sans-serif;
+  }
+  
+  .price {
+    color: #5a5a5a;
+    font: 100 24px Inter, sans-serif;
+    margin-top: 11px;
+  }
+  
+  .enroll-button {
+    border-radius: 10px;
+    background: rgba(251, 255, 0, 1);
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    font: 500 24px Inter, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    cursor: pointer;
+    margin-top: auto; 
+  }
+  
+  .search-section {
+    background: #f9f9f9; 
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; 
+    display: flex;
+    justify-content: center; 
+  }
+  
+  .search-container {
+    max-width: 800px; 
+    width: 100%; 
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .search-title {
+    font-size: 32px; 
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .form-label {
+    font-size: 18px; 
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .form-input,
+  .age-input,
+  .difficulty-option {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .age-inputs {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+  }
+  
+  .age-input {
+    flex: 1;
+  }
+  
+  .difficulty-selector {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+  }
+  
+  .difficulty-option {
+    background: #e0e0e0;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .difficulty-option[aria-label="Easy"] {
+    background: #6bbf59; 
+  }
+  
+  .difficulty-option[aria-label="Medium"] {
+    background: #ffb74d; 
+  }
+  
+  .difficulty-option[aria-label="Hard"] {
+    background: #ef5350; 
+  }
+  
+  
+
+  .difficulty-level {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+  
+  .difficulty-dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    border: 2px solid black; 
+  }
+  
+  .difficulty-dot.green {
+    background-color: green;
+  }
+  
+  .difficulty-dot.orange {
+    background-color: orange;
+  }
+  
+  .difficulty-dot.red {
+    background-color: red;
+  }
+  
+  .difficulty-dot.border {
+    background-color: transparent; 
+    border: 2px solid black; 
+  }
+  
+  .contact-section {
+    background: #2d2d2d;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+
+  }
+  
+  .contact-title {
+    font-size: 1.3rem; 
+    margin-bottom: 12px; 
+  }
+  
+  .contact-subtitle {
+    font-size: 0.9rem; 
+    color: #cccccc;
+  }
+  
+  .contact-button {
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px; 
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+/* Стилі для модального вікна */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto;
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; 
+  max-width: 600px;
+  border-radius: 10px;
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"], .modal button {
+  background-color: rgba(251, 255, 0, 1);
+  border: none;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+button[type="submit"]:hover, .modal button:hover {
+  background-color: rgba(251, 255, 0, 0.8);
+}
